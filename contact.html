@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ubuntu Bridge | Contact</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Ubuntu Bridge</h1>
+    <p>Nourishing children. Building futures.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="enquiry.html">Enquiry</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="contact-details">
+      <h2>Contact Details</h2>
+      <p>Email: info@ubuntubridge.org.za</p>
+      <p>Phone: 011 000 0000</p>
+    </section>
+
+    <section id="locations">
+      <h2>Our Locations</h2>
+
+      <h3>Soweto Site</h3>
+      <p>123 Vilakazi Street, Soweto, Johannesburg</p>
+      <!-- Google Maps embed to be added in Part 3 -->
+      <div class="map-placeholder">Map: Soweto Site</div>
+
+      <h3>Alexandra Site</h3>
+      <p>45 London Road, Alexandra, Johannesburg</p>
+      <!-- Google Maps embed to be added in Part 3 -->
+      <div class="map-placeholder">Map: Alexandra Site</div>
+    </section>
+
+    <section id="contact-form">
+      <h2>Send Us a Message</h2>
+      <!-- Note: full client-side validation and submission handling
+           (JavaScript) will be implemented in Part 3. -->
+      <form action="#" method="post">
+        <div>
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+          <label for="messageType">Message Type</label>
+          <select id="messageType" name="messageType" required>
+            <option value="">-- Please select --</option>
+            <option value="general">General Enquiry</option>
+            <option value="feedback">Feedback</option>
+            <option value="partnership">Partnership Request</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Ubuntu Bridge. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
