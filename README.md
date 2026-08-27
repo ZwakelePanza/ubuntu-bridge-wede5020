@@ -1,10 +1,10 @@
 # Ubuntu Bridge Website — WEDE5020 POE
 
 ## Student Information
-- Student Name: Zwakele [Surname]
-- Student Number: [Insert Student Number]
+- Student Name: Zwakele Panza
+- Student Number: ST10539588
 - Institution: The IIE Rosebank College
-- Module: WEDE5020 — Web Design and Development
+- Module: WEDE5020 — Web Development
 
 ## Project Overview
 A website for Ubuntu Bridge, a Johannesburg-based non-profit organisation
