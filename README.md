@@ -4,7 +4,7 @@
 - Student Name: Zwakele Panza
 - Student Number: ST10539588
 - Institution: The IIE Rosebank College
-- Module: WEDE5020 — Web Design and Development
+- Module: WEDE5020 - Web Design and Development
 
 ## Project Overview
 A website for Ubuntu Bridge, a Johannesburg-based non-profit organisation
