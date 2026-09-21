@@ -80,15 +80,6 @@ progressive enhancement via `min-width` media queries at 600px (tablet) and
 **Mobile (375px)**
 ![Mobile view](screenshots/mobile-index.png)
  
-### Outstanding before submission
-- [ ] **Feedback from Part 1**: the brief requires implementing lecturer
-  feedback from Part 1 and logging each fix below before submitting Part 2.
-  No Part 1 feedback/marks were available while preparing this update —
-  add your specific corrections and a changelog entry for each once you
-  have them.
-- [ ] Replace placeholder images in `images/` with real photos (with
-  permission/rights to use them) and update the `alt` text if needed.
-
 ## Changelog
 - **2026-08-14**: Initial commit — created HTML structure for 5 pages
   (index, about, services, enquiry, contact), base stylesheet, folder
