@@ -4,7 +4,7 @@
 - Student Name: Zwakele Panza
 - Student Number: ST10539588
 - Institution: The IIE Rosebank College
-- Module: WEDE5020 — Web Development
+- Module: WEDE5020 — Web Design and Development
 
 ## Project Overview
 A website for Ubuntu Bridge, a Johannesburg-based non-profit organisation
@@ -49,10 +49,51 @@ ubuntu-bridge/
 ## Sitemap
 ![Sitemap](sitemap.png)
 
+## Part 2 Details
+`css/style.css` was fully built out for Part 2, styled mobile-first with
+progressive enhancement via `min-width` media queries at 600px (tablet) and
+900px (desktop):
+
+- **Colour scheme**: terracotta orange (`#a8501f` / `#c9622f`) and leaf
+  green (`#3f6b43`), matching the Part 1 proposal, defined as CSS custom
+  properties in `:root` so the palette only needs to change in one place.
+- **Typography**: Google Fonts `Poppins` (headings) and `Open Sans` (body),
+  linked in each page's `<head>`, with a simple type scale for `h1`–`h3`.
+- **Layout**: CSS Grid used for two-column desktop layouts (hero image/text,
+  About Us mission/vision and team, Services meal programme, Contact
+  locations), collapsing to a single column below the desktop breakpoint —
+  no extra wrapper `<div>`s were added; grid placement targets the existing
+  `id`/`nth-of-type` selectors directly to keep selector count low.
+- **Visual styling**: card-style backgrounds and shadows for the Services
+  sections and forms, `:hover`/`:focus`/`:active` states on nav links and
+  buttons, styled form inputs with focus outlines.
+- **Responsive images**: images are set to `max-width: 100%` so they scale
+  fluidly within their containers at every breakpoint.
+- **Screenshot evidence**: [Add your own screenshots here of index.html,
+  about.html, services.html, enquiry.html and contact.html at desktop,
+  tablet (768px) and mobile (375px) widths, as required by the brief —
+  these need to come from your own browser dev tools.]
+
+### Outstanding before submission
+- [ ] **Feedback from Part 1**: the brief requires implementing lecturer
+  feedback from Part 1 and logging each fix below before submitting Part 2.
+  No Part 1 feedback/marks were available while preparing this update —
+  add your specific corrections and a changelog entry for each once you
+  have them.
+- [ ] Replace placeholder images in `images/` with real photos (with
+  permission/rights to use them) and update the `alt` text if needed.
+
 ## Changelog
 - **2026-08-14**: Initial commit — created HTML structure for 5 pages
   (index, about, services, enquiry, contact), base stylesheet, folder
   structure, and sitemap for Part 1.
+- **2026-09-17**: Part 2 — built out `css/style.css` in full: CSS custom
+  properties for the terracotta/leaf-green colour scheme, Google Fonts
+  typography (Poppins/Open Sans), base styles and reset, header/nav/footer
+  styling with interactive states, CSS Grid layouts for hero/team/mission-
+  vision/meals/locations sections, styled forms (enquiry and contact), and
+  mobile-first responsive breakpoints at 600px and 900px. Added Google
+  Fonts `<link>` tags to the `<head>` of all five HTML pages.
 
 ## References
 - Mozilla Developer Network (2026) *HTML: HyperText Markup Language*. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML (Accessed: 14 August 2026).

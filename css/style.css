@@ -1,0 +1,536 @@
+/* ==========================================================================
+   Ubuntu Bridge — Part 2 Stylesheet
+   CSS Styling and Responsive Design
+   Colour scheme: terracotta orange + leaf green (per Part 1 proposal)
+   Approach: mobile-first — base rules target small screens, min-width
+   media queries layer on tablet/desktop layout enhancements.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   2.1 Custom properties (used across the whole site — cascades everywhere,
+   so a colour or spacing change only has to happen in one place)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colour palette */
+  --color-primary: #a8501f;        /* terracotta — text/accents, AA-safe on white */
+  --color-primary-light: #e8895b;  /* lighter terracotta — hover/decorative */
+  --color-primary-bg: #c9622f;     /* header/hero background */
+  --color-secondary: #3f6b43;      /* leaf green — footer, secondary accents */
+  --color-secondary-light: #e7f0e4;/* pale green — soft section backgrounds */
+  --color-bg: #fff9f4;             /* warm off-white page background */
+  --color-surface: #ffffff;        /* card/form surfaces */
+  --color-text: #2b2420;           /* body text */
+  --color-text-muted: #5c5248;     /* secondary text */
+  --color-border: #e4d9cc;
+
+  /* Typography */
+  --font-heading: 'Poppins', Helvetica, Arial, sans-serif;
+  --font-body: 'Open Sans', Helvetica, Arial, sans-serif;
+
+  /* Layout */
+  --max-width: 1100px;
+  --radius: 8px;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+}
+
+/* --------------------------------------------------------------------------
+   2.2 Reset + base styles
+   -------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+ul {
+  list-style: none;
+}
+
+/* --------------------------------------------------------------------------
+   2.3 Typography
+   -------------------------------------------------------------------------- */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  max-width: 65ch;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Header
+   -------------------------------------------------------------------------- */
+header {
+  background-color: var(--color-primary-bg);
+  color: var(--color-surface);
+  text-align: center;
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+header h1 {
+  color: var(--color-surface);
+  font-size: 1.85rem;
+}
+
+header p {
+  color: var(--color-surface);
+  max-width: none;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Navigation
+   -------------------------------------------------------------------------- */
+nav {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-sm) var(--spacing-md);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: var(--spacing-sm) var(--spacing-sm);
+  border-radius: var(--radius);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--color-secondary-light);
+  color: var(--color-secondary);
+}
+
+nav a:active {
+  background-color: var(--color-secondary);
+  color: var(--color-surface);
+}
+
+/* --------------------------------------------------------------------------
+   2.4 Layout — main content container
+   -------------------------------------------------------------------------- */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+main section {
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+main section:last-child {
+  border-bottom: none;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons (shared by hero CTA and form submit buttons — minimum selectors,
+   maximum reuse via the cascade)
+   -------------------------------------------------------------------------- */
+.cta-button,
+button[type="submit"] {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-surface);
+  background-color: var(--color-primary);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.cta-button:hover,
+button[type="submit"]:hover,
+.cta-button:focus,
+button[type="submit"]:focus {
+  background-color: var(--color-secondary);
+}
+
+.cta-button:active,
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* --------------------------------------------------------------------------
+   2.5 Visual styling — page-specific sections
+   -------------------------------------------------------------------------- */
+
+/* Homepage hero */
+#hero {
+  text-align: center;
+}
+
+#hero img {
+  margin-bottom: var(--spacing-md);
+}
+
+#hero h2 {
+  color: var(--color-primary);
+}
+
+/* Homepage quick intro */
+#quick-intro {
+  text-align: center;
+}
+
+#quick-intro p {
+  margin: 0 auto var(--spacing-md);
+}
+
+/* About: mission/vision */
+#mission-vision {
+  background-color: var(--color-secondary-light);
+  border-radius: var(--radius);
+  padding: var(--spacing-lg);
+}
+
+/* About: team */
+#team img {
+  margin-top: var(--spacing-md);
+}
+
+/* Services cards */
+#meals, #tutoring, #get-involved {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  padding: var(--spacing-lg);
+  box-shadow: 0 2px 8px rgba(43, 36, 32, 0.06);
+  margin-bottom: var(--spacing-lg);
+  border-bottom: none;
+}
+
+#get-involved {
+  background-color: var(--color-secondary-light);
+  text-align: center;
+}
+
+/* Contact page */
+#contact-details p {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.map-placeholder {
+  background-color: var(--color-secondary-light);
+  border: 1px dashed var(--color-secondary);
+  border-radius: var(--radius);
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-align: center;
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* --------------------------------------------------------------------------
+   Forms (enquiry + contact — shared structure: div > label + input)
+   -------------------------------------------------------------------------- */
+form {
+  max-width: 500px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  padding: var(--spacing-lg);
+  box-shadow: 0 2px 8px rgba(43, 36, 32, 0.06);
+}
+
+form div {
+  margin-bottom: var(--spacing-md);
+}
+
+label {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+  color: var(--color-text);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 1px;
+  border-color: var(--color-primary);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+footer {
+  background-color: var(--color-secondary);
+  color: var(--color-surface);
+  text-align: center;
+  padding: var(--spacing-md);
+  font-size: 0.9rem;
+}
+
+footer p {
+  color: var(--color-surface);
+  max-width: none;
+  margin-bottom: 0;
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   3. Responsive design — breakpoints and layout upgrades
+   Mobile-first: everything above is the small-screen layout by default.
+   From here we widen the layout for tablet and desktop.
+   ========================================================================== */
+
+/* 3.1 Tablet and up (~600px) */
+@media (min-width: 600px) {
+  header h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  /* Mission/Vision side by side */
+  #mission-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--spacing-lg);
+  }
+
+  #mission-vision h2:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #mission-vision p:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  #mission-vision h2:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  #mission-vision p:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* Locations side by side */
+  #locations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--spacing-lg);
+  }
+
+  #locations h2 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  #locations h3:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  #locations p:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  #locations .map-placeholder:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  #locations h3:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  #locations p:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  #locations .map-placeholder:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 4;
+  }
+}
+
+/* 3.2 Desktop and up (~900px) — introduce the structured grid layouts
+   described in the proposal (single-column mobile -> grid desktop) */
+@media (min-width: 900px) {
+  nav ul {
+    justify-content: flex-start;
+    padding-left: var(--spacing-md);
+  }
+
+  /* Hero: image and text side by side */
+  #hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: var(--spacing-xl);
+    text-align: left;
+  }
+
+  #hero img {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    margin-bottom: 0;
+  }
+
+  #hero h2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #hero p {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: none;
+  }
+
+  #hero .cta-button {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: start;
+  }
+
+  /* About: team — text left, image right */
+  #team {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: var(--spacing-xl);
+  }
+
+  #team h2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #team p {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: none;
+  }
+
+  #team img {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    margin-top: 0;
+  }
+
+  /* Services: meals — image left, text right */
+  #meals {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: var(--spacing-xl);
+  }
+
+  #meals img {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  #meals h2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  #meals p {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: none;
+  }
+
+  /* Forms: give a bit more breathing room, keep readable line length */
+  form {
+    padding: var(--spacing-xl);
+  }
+}
