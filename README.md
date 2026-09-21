@@ -69,11 +69,17 @@ progressive enhancement via `min-width` media queries at 600px (tablet) and
   buttons, styled form inputs with focus outlines.
 - **Responsive images**: images are set to `max-width: 100%` so they scale
   fluidly within their containers at every breakpoint.
-- **Screenshot evidence**: [Add your own screenshots here of index.html,
-  about.html, services.html, enquiry.html and contact.html at desktop,
-  tablet (768px) and mobile (375px) widths, as required by the brief —
-  these need to come from your own browser dev tools.]
+- **Screenshot evidence**: screenshots of 'index.html' at desktop, tablet, and mobile widths are included in the 'screenshots/' folder:
 
+**Desktop (1280px)**
+![Desktop view](screenshots/desktop-index.png)
+
+**Tablet (768px)**
+![Tablet view](screenshots/tablet-index.png]
+
+**Mobile (375px)**
+![Mobile view](screenshots/mobile-index.png)
+ 
 ### Outstanding before submission
 - [ ] **Feedback from Part 1**: the brief requires implementing lecturer
   feedback from Part 1 and logging each fix below before submitting Part 2.
