@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ubuntu Bridge | About Us</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -27,6 +27,7 @@
   </nav>
 
   <main>
+    <!-- Background/origin story: builds trust before asking for donations/volunteers -->
     <section id="history">
       <h2>Our History</h2>
       <p>
@@ -38,6 +39,9 @@
       </p>
     </section>
 
+    <!-- Mission and Vision share one section so they can sit side-by-side on
+         desktop (see #mission-vision in style.css); each h2/p pair is placed
+         into its own grid column/row using nth-of-type selectors, no extra markup needed. -->
     <section id="mission-vision">
       <h2>Mission</h2>
       <p>
@@ -51,6 +55,9 @@
       </p>
     </section>
 
+    <!-- Team section: text first, image last in the HTML so the page still
+         reads sensibly with CSS disabled; desktop CSS reorders this into a
+         two-column layout with the photo on the right. -->
     <section id="team">
       <h2>Our Team</h2>
       <p>

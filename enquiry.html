@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ubuntu Bridge | Enquiry</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -36,23 +36,28 @@
       </p>
     </section>
 
+    <!-- Enquiry form: every field is wrapped in its own <div> containing a
+         <label> and its input, which lets style.css target "form div" once
+         to space every field consistently instead of styling each field by hand.
+         JavaScript validation and submission handling added in Part 3 — see js/enquiry.js -->
     <section id="enquiry-form">
-      <!-- Note: full client-side validation and submission handling
-           (JavaScript) will be implemented in Part 3. -->
-      <form action="#" method="post">
+      <form id="enquiryForm" action="#" method="post" novalidate>
         <div>
           <label for="fullName">Full Name</label>
           <input type="text" id="fullName" name="fullName" required>
+          <span class="error-message" id="fullNameError"></span>
         </div>
 
         <div>
           <label for="email">Email Address</label>
           <input type="email" id="email" name="email" required>
+          <span class="error-message" id="emailError"></span>
         </div>
 
         <div>
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone">
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 082 123 4567">
+          <span class="error-message" id="phoneError"></span>
         </div>
 
         <div>
@@ -62,6 +67,7 @@
             <option value="volunteer">Volunteer Tutor</option>
             <option value="sponsor">Sponsor</option>
           </select>
+          <span class="error-message" id="enquiryTypeError"></span>
         </div>
 
         <div>
@@ -71,6 +77,11 @@
 
         <button type="submit">Submit Enquiry</button>
       </form>
+      <!-- Confirmation message shown by JS after a successful "submission" -->
+      <div id="enquirySuccess" class="form-success" hidden>
+        Thank you — your enquiry has been received. We'll be in touch about
+        cost, availability, and next steps shortly.
+      </div>
     </section>
   </main>
 
@@ -78,5 +89,6 @@
     <p>&copy; 2026 Ubuntu Bridge. All rights reserved.</p>
   </footer>
 
+  <script src="js/enquiry.js"></script>
 </body>
 </html>
