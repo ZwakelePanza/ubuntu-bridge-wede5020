@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zwakelepanza.github.io/ubuntu-bridge-wede5020/sitemap.xml
+Sitemap: https://endearing-sundae-6a01a0.netlify.app/sitemap.xml
