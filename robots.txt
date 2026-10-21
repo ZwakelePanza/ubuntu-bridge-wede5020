@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zwakelepanza.github.io/ubuntu-bridge-wede5020/sitemap.xml
