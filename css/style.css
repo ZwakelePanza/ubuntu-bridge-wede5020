@@ -594,3 +594,43 @@ button[type="submit"]:disabled {
     grid-row: 4;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Part 3: FAQ accordion
+   -------------------------------------------------------------------------- */
+.accordion-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accordion-trigger {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text);
+  padding: var(--spacing-md) 0;
+  cursor: pointer;
+  position: relative;
+  padding-right: 2rem; /* room for the +/- indicator */
+}
+
+/* Plus/minus indicator, swapped via aria-expanded rather than a second element */
+.accordion-trigger::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: var(--spacing-md);
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+.accordion-trigger[aria-expanded="true"]::after {
+  content: "−";
+}
+
+.accordion-panel {
+  padding-bottom: var(--spacing-md);
+}

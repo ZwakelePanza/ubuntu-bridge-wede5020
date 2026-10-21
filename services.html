@@ -58,11 +58,56 @@
         <a href="enquiry.html">Submit an enquiry here</a>.
       </p>
     </section>
-  </main>
+  <!-- Interactive FAQ accordion (Part 3). Each question is a <button> so it's
+         keyboard-accessible; aria-expanded is toggled by js/accordion.js to tell
+         screen readers whether the answer is currently visible. -->
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          How much time do volunteers need to commit?
+        </button>
+        <div class="accordion-panel" hidden>
+          <p>Most volunteer tutors commit to one or two afternoons a week during
+          the school term, for about two hours per session.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          Do I need teaching experience to volunteer?
+        </button>
+        <div class="accordion-panel" hidden>
+          <p>No formal teaching experience is required — we provide a short
+          orientation session, and our coordinators support tutors throughout.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          How are sponsorship funds used?
+        </button>
+        <div class="accordion-panel" hidden>
+          <p>Sponsorship funds go directly toward daily meal ingredients,
+          tutoring materials, and transport for our partner-school programmes.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          Can I sponsor a specific school?
+        </button>
+        <div class="accordion-panel" hidden>
+          <p>Yes — let us know your preference on the enquiry form and our team
+          will confirm availability for that partner school.</p>
+        </div>
+      </div>
+    </section></main>
 
   <footer>
     <p>&copy; 2026 Ubuntu Bridge. All rights reserved.</p>
   </footer>
 
-</body>
+<script src="js/accordion.js"></script></body>
 </html>
