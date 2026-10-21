@@ -96,3 +96,18 @@ progressive enhancement via `min-width` media queries at 600px (tablet) and
 - Mozilla Developer Network (2026) *HTML: HyperText Markup Language*. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML (Accessed: 14 August 2026).
 - World Wide Web Consortium (2026) *Web Content Accessibility Guidelines (WCAG) 2.1*. Available at: https://www.w3.org/WAI/WCAG21/quickref/ (Accessed: 14 August 2026).
 - Google (2026) *SEO Starter Guide*. Available at: https://developers.google.com/search/docs/fundamentals/seo-starter-guide (Accessed: 14 August 2026).
+
+## Live Site
+
+Deployed on Netlify: https://endearing-sundae-6a01a0.netlify.app
+
+## Changelog
+
+### Part 3 – Functionality & SEO
+- Added detailed code comments across all HTML, CSS, and JS files
+- Implemented client-side form validation with simulated AJAX submission on the Enquiry and Contact forms (js/enquiry.js, js/contact.js)
+- Added an accessible FAQ accordion to the Services page (js/accordion.js)
+- Replaced static map placeholders on the Contact page with embedded Google Maps iframes for both site locations
+- Added SEO meta descriptions to all 5 pages
+- Added robots.txt and sitemap.xml for search engine indexing
+- Deployed the site live to Netlify and updated sitemap.xml/robots.txt with the live deployment URL
