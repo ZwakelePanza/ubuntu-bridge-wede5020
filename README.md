@@ -1,4 +1,4 @@
-# Ubuntu Bridge Website — WEDE5020 POE
+# Ubuntu Bridge Website - WEDE5020 POE
 
 ## Student Information
 - Student Name: Zwakele Panza
@@ -61,7 +61,7 @@ progressive enhancement via `min-width` media queries at 600px (tablet) and
   linked in each page's `<head>`, with a simple type scale for `h1`–`h3`.
 - **Layout**: CSS Grid used for two-column desktop layouts (hero image/text,
   About Us mission/vision and team, Services meal programme, Contact
-  locations), collapsing to a single column below the desktop breakpoint —
+  locations), collapsing to a single column below the desktop breakpoint -
   no extra wrapper `<div>`s were added; grid placement targets the existing
   `id`/`nth-of-type` selectors directly to keep selector count low.
 - **Visual styling**: card-style backgrounds and shadows for the Services
@@ -81,10 +81,10 @@ progressive enhancement via `min-width` media queries at 600px (tablet) and
 ![Mobile view](screenshots/mobile-index.png)
  
 ## Changelog
-- **2026-08-14**: Initial commit — created HTML structure for 5 pages
+- **2026-08-14**: Initial commit - created HTML structure for 5 pages
   (index, about, services, enquiry, contact), base stylesheet, folder
   structure, and sitemap for Part 1.
-- **2026-09-17**: Part 2 — built out `css/style.css` in full: CSS custom
+- **2026-09-17**: Part 2 - built out `css/style.css` in full: CSS custom
   properties for the terracotta/leaf-green colour scheme, Google Fonts
   typography (Poppins/Open Sans), base styles and reset, header/nav/footer
   styling with interactive states, CSS Grid layouts for hero/team/mission-
