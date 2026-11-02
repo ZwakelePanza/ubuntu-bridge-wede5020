@@ -103,7 +103,7 @@ Deployed on Netlify: https://endearing-sundae-6a01a0.netlify.app
 
 ## Changelog
 
-### Part 3 – Functionality & SEO
+### Part 3 - Functionality & SEO
 - Added detailed code comments across all HTML, CSS, and JS files
 - Implemented client-side form validation with simulated AJAX submission on the Enquiry and Contact forms (js/enquiry.js, js/contact.js)
 - Added an accessible FAQ accordion to the Services page (js/accordion.js)
